@@ -433,3 +433,26 @@ input {
     padding: 10px 10px;
     font-family: 'Poppins', sans-serif;
 }
+
+
+/* src/assets/index.css */
+.help-popup {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  visibility: hidden;
+  background-color: #86bd42;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#closeHelpPopup {
+  margin-left: 10px;
+  cursor: pointer;
+}

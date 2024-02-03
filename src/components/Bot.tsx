@@ -13,6 +13,7 @@ import socketIOClient from 'socket.io-client';
 import { Popup } from '@/features/popup';
 import { Avatar } from '@/components/avatars/Avatar';
 import { DeleteButton } from '@/components/SendButton';
+import HelpPopup from './HelpPopup';
 
 type messageType = 'apiMessage' | 'userMessage' | 'usermessagewaiting';
 
@@ -422,6 +423,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
 
       return (
         <>
+            <HelpPopup />
             {isChatUiVisible() && (
                 <div ref={botContainer} class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}>
                     <div class="flex w-full h-full justify-center">
