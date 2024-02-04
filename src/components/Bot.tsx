@@ -13,7 +13,7 @@ import socketIOClient from 'socket.io-client';
 import { Popup } from '@/features/popup';
 import { Avatar } from '@/components/avatars/Avatar';
 import { DeleteButton } from '@/components/SendButton';
-import HelpPopup from './HelpPopup';
+// import HelpPopup from './HelpPopup';
 
 type messageType = 'apiMessage' | 'userMessage' | 'usermessagewaiting';
 
@@ -226,8 +226,7 @@ export const Bot = (props: BotProps & { class?: string }) => {
 
     const promptClick = (prompt: string) => {
         handleSubmit(prompt);
-    }
-
+    };
     // Handle form submission
     const handleSubmit = async (value: string) => {
         setUserInput(value);
@@ -423,11 +422,12 @@ export const Bot = (props: BotProps & { class?: string }) => {
 
       return (
         <>
-            <HelpPopup />
-            {isChatUiVisible() && (
-                <div ref={botContainer} class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}>
+          <div ref={botContainer} 
+            class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}
+            style={{ 'border-radius': '12px' }}
+          >
                     <div class="flex w-full h-full justify-center">
-                        <div style={{ "padding-bottom": '100px' }} ref={chatContainer} class="overflow-y-scroll min-w-full w-full min-h-full px-3 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth">
+                        <div style={{ "padding-bottom": '100px','padding-top': '70px' }} ref={chatContainer} class="overflow-y-scroll min-w-full w-full min-h-full px-3 pt-10 relative scrollable-container chatbot-chat-view scroll-smooth">
                             <For each={[...messages()]}>
                                 {(message, index) => (
                                     <>
@@ -452,7 +452,10 @@ export const Bot = (props: BotProps & { class?: string }) => {
                                             />
                                         )}
                                         {message.type === 'userMessage' && loading() && index() === messages().length - 1 && (
-                                            <LoadingBubble />
+                                            <LoadingBubble
+                                                showAvatar={props.botMessage?.showAvatar}
+                                                avatarSrc={props.botMessage?.avatarSrc}
+                                            />
                                         )}
                                         {message.sourceDocuments && message.sourceDocuments.length && (
                                             <div style={{ display: 'flex', 'flex-direction': 'row', width: '100%' }}>
@@ -553,7 +556,6 @@ export const Bot = (props: BotProps & { class?: string }) => {
                     />
                     <BottomSpacer ref={bottomSpacer} />
                 </div>
-            )};
             {sourcePopupOpen() && <Popup isOpen={sourcePopupOpen()} value={sourcePopupSrc()} onClose={() => setSourcePopupOpen(false)} />}
         </>
     );    

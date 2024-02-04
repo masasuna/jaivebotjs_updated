@@ -24,7 +24,7 @@
     --chatbot-header-bg-color: #ffffff;
     --chatbot-header-color: #303235;
   
-    --chatbot-border-radius: 6px;
+    --chatbot-border-radius: 12px;
   
     /* Phone input */
     --PhoneInputCountryFlag-borderColor: transparent;
@@ -204,7 +204,7 @@
   .chatbot-host-bubble > .bubble-typing {
     background-color: #f7f8ff;
     border: var(--chatbot-host-bubble-border);
-    border-radius: 6px;
+    border-radius: 12px;
   }
   
   .chatbot-host-bubble img,

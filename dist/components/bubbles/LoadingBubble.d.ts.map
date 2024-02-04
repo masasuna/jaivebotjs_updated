@@ -1,1 +1,1 @@
-{"version":3,"file":"LoadingBubble.d.ts","sourceRoot":"","sources":["../../../src/components/bubbles/LoadingBubble.tsx"],"names":[],"mappings":"AAGA,eAAO,MAAM,aAAa,sCAOzB,CAAC"}
+{"version":3,"file":"LoadingBubble.d.ts","sourceRoot":"","sources":["../../../src/components/bubbles/LoadingBubble.tsx"],"names":[],"mappings":"AAMA,KAAK,KAAK,GAAG;IACX,UAAU,CAAC,EAAE,OAAO,CAAC;IACrB,SAAS,CAAC,EAAE,MAAM,CAAC;CAEpB,CAAC;AAGF,eAAO,MAAM,aAAa,UAAW,KAAK,mCASzC,CAAC"}

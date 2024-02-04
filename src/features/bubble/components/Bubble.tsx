@@ -42,6 +42,7 @@ export const Bubble = (props: BubbleProps) => {
           'box-shadow': 'rgb(0 0 0 / 16%) 0px 5px 40px',
           'background-color': bubbleProps.theme?.chatWindow?.backgroundColor || '#ffffff',
           'z-index': 42424242,
+
         }}
         class={
           `fixed sm:right-5 rounded-lg w-full sm:w-[400px] max-h-[704px]` +
